@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 :root {
   --primary-color: #047aed;
@@ -11,18 +11,18 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   color: #333;
   line-height: 1.6;
 }
 
 ul {
-  list-style: none;
+  list-style-type: none;
 }
 
 a {
@@ -32,13 +32,13 @@ a {
 
 h1,
 h2 {
-  font-weight: 350;
+  font-weight: 300;
   line-height: 1.2;
-  margin: 10px, 0;
+  margin: 10px 0;
 }
 
 p {
-  margin: 10px, 0;
+  margin: 10px 0;
 }
 
 img {
@@ -52,10 +52,16 @@ pre {
   padding: 10px;
 }
 
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+/* Navbar */
 .navbar {
   background-color: var(--primary-color);
-  height: 70px;
   color: #fff;
+  height: 70px;
 }
 
 .navbar ul {
@@ -67,16 +73,16 @@ pre {
   padding: 10px;
   margin: 0 5px;
 }
-/*Navbar*/
+
 .navbar a:hover {
   border-bottom: 2px #fff solid;
 }
 
-.navbar.flex {
+.navbar .flex {
   justify-content: space-between;
 }
 
-/*Showcase*/
+/* Showcase */
 .showcase {
   height: 400px;
   background-color: var(--primary-color);
@@ -86,21 +92,20 @@ pre {
 
 .showcase h1 {
   font-size: 40px;
-  margin: 10px 0px;
 }
 
 .showcase p {
-  margin: 20px, 0;
+  margin: 20px 0;
 }
 
 .showcase .grid {
   overflow: visible;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 55% auto;
   gap: 30px;
 }
 
 .showcase-text {
-  animation: sildeInFromLeft 1s ease-in;
+  animation: slideInFromLeft 1s ease-in;
 }
 
 .showcase-form {
@@ -110,16 +115,17 @@ pre {
   width: 400px;
   padding: 40px;
   z-index: 100;
-  animation: sildeInFromRight 1s ease-in;
+  justify-self: flex-end;
+  animation: slideInFromRight 1s ease-in;
 }
 
 .showcase-form .form-control {
-  margin: 30px 0px;
+  margin: 30px 0;
 }
 
-.showcase-form input[type="text"],
-.showcase-form input[type="email"] {
-  border: 0px;
+.showcase-form input[type='text'],
+.showcase-form input[type='email'] {
+  border: 0;
   border-bottom: 1px solid #b4becb;
   width: 100%;
   padding: 3px;
@@ -132,23 +138,23 @@ pre {
 
 .showcase::before,
 .showcase::after {
-  content: "";
+  content: '';
   position: absolute;
   height: 100px;
   bottom: -70px;
-  right: 0px;
-  left: 0px;
+  right: 0;
+  left: 0;
   background: #fff;
-  transform: skewY(-2deg);
-  -webkit-transform: skewY(-2deg);
-  -moz-transform: skewY(-2deg);
-  -ms-transform: skewY(-2deg);
+  transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
 }
 
-/*Stats*/
+/* Stats */
 .stats {
   padding-top: 100px;
-  animation: sildeInFromBottom 1s ease-in;
+  animation: slideInFromBottom 1s ease-in;
 }
 
 .stats-heading {
@@ -165,11 +171,7 @@ pre {
   font-weight: bold;
 }
 
-/*Cli*/
-.cli img {
-  width: 600px;
-  height: 200px;
-}
+/* Cli */
 .cli .grid {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -180,12 +182,13 @@ pre {
   grid-row: 1 / span 2;
 }
 
-/*Cloud*/
+/* Cloud */
 .cloud .grid {
   grid-template-columns: 4fr 3fr;
 }
 
 /* Languages */
+
 .languages .flex {
   flex-wrap: wrap;
 }
@@ -193,7 +196,7 @@ pre {
 .languages .card {
   text-align: center;
   margin: 18px 10px 40px;
-  transition: transform 0.1s ease-in;
+  transition: transform 0.2s ease-in;
 }
 
 .languages .card h4 {
@@ -202,7 +205,7 @@ pre {
 }
 
 .languages .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
 }
 
 /* Features */
@@ -235,7 +238,7 @@ pre {
 
 /* Docs */
 .docs-main h3 {
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 
 .docs-main .grid {
@@ -247,7 +250,7 @@ pre {
   font-size: 17px;
   padding-bottom: 5px;
   margin-bottom: 5px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px #ccc solid;
 }
 
 .docs-main a:hover {
@@ -259,50 +262,55 @@ pre {
   margin: 0 10px;
 }
 
-/* Animation */
-@keyframes sildeInFromLeft {
+/* Animations */
+@keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
 }
 
-@keyframes sildeInFromRight {
+@keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
   }
+
   100% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
 }
 
-@keyframes sildeInFromTop {
+@keyframes slideInFromTop {
   0% {
     transform: translateY(-100%);
   }
+
   100% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
 }
 
-@keyframes sildeInFromBottom {
+@keyframes slideInFromBottom {
   0% {
     transform: translateY(100%);
   }
+
   100% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
 }
-/* Media Query for Tablets */
+
+/* Tablets and under */
 @media (max-width: 768px) {
   .grid,
   .showcase .grid,
   .stats .grid,
   .cli .grid,
   .cloud .grid,
-  .features-main.grid,
+  .features-main .grid,
   .docs-main .grid {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -315,13 +323,13 @@ pre {
   .showcase-text {
     text-align: center;
     margin-top: 40px;
-    animation: sildeInFromTop 1s ease-in;
+    animation: slideInFromTop 1s ease-in;
   }
 
   .showcase-form {
     justify-self: center;
     margin: auto;
-    animation: sildeInFromBottom 1s ease-in;
+    animation: slideInFromBottom 1s ease-in;
   }
 
   .cli .grid > *:first-child {
@@ -340,14 +348,15 @@ pre {
   .docs-head img {
     justify-self: center;
   }
+
   .features-main .grid > *:first-child,
   .features-main .grid > *:nth-child(2) {
     grid-column: 1;
   }
 }
 
-/* Media Query for Mobiles */
-@media (max-width: 300px) {
+/* Mobile */
+@media (max-width: 500px) {
   .navbar {
     height: 110px;
   }
@@ -359,5 +368,9 @@ pre {
   .navbar ul {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .showcase-form {
+    width: 300px;
   }
 }
